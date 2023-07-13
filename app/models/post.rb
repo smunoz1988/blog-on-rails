@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  validation :title, presence: true, length: { maximum: 250 }
+
+
   belongs_to :author, class_name: 'User'
   has_many :likes
   has_many :comments
