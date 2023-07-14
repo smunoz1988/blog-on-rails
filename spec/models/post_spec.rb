@@ -44,7 +44,7 @@ RSpec.describe Post, type: :model do
       expect { post.decrement_post_counter }.to change { user.reload.posts_counter }.by(-1)
     end
   end
-  
+
   describe '#recent_comments' do
     it 'returns the five most recent comments' do
       user = User.create(name: 'John Doe', posts_counter: 0)
