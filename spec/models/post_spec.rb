@@ -15,9 +15,16 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'CommentsCounter should be greater than or equal to 0' do
+  it 'Comments counter should be greater than or equal to 0' do
     subject.comments_counter = -1
     expect(subject).to_not be_valid
   end
+
+  it 'LikesCounter should be greater than or equal to 0' do
+    subject.likes_counter = -1
+    expect(subject).to_not be_valid
+  end
+
+
 
 end
