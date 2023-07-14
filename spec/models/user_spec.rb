@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.create(name: 'Mike', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0) }
+  subject { User.new(name: 'John Doe', posts_counter: 0) }
 
   before { subject.save }
 
@@ -20,16 +20,15 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end
 
-  describe '#recent_posts' do
-    it 'returns the most recent 3 posts' do
-      user = User.create(name: 'Mike', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)
-      Post.create(author: user, title: 'Hello', text: 'This is my first post')
-      Post.create(author: user, title: 'Hello2', text: 'This is my second post')
-      Post.create(author: user, title: 'Hello3', text: 'This is my third post')
-      Post.create(author: user, title: 'Hello4', text: 'This is my fourth post')
-      Post.create(author: user, title: 'Hello5', text: 'This is my fifth post')
-
-      user.recent_posts
+  describe 'recent_posts' do
+    it 'should return 3 recent posts' do
+      user = User.create(name: 'John Doe', posts_counter: 0)
+      Post.create(title: 'This is a post', comments_counter: 2, likes_counter: 1, author_id: user.id)
+      Post.create(title: 'This is a post', comments_counter: 2, likes_counter: 1, author_id: user.id)
+      post3 = Post.create(title: 'This is a post', comments_counter: 2, likes_counter: 1, author_id: user.id)
+      post4 = Post.create(title: 'This is a post', comments_counter: 2, likes_counter: 1, author_id: user.id)
+      post5 = Post.create(title: 'This is a post', comments_counter: 2, likes_counter: 1, author_id: user.id)
+      expect(user.recent_posts).to eq([post5, post4, post3])
     end
   end
 end
