@@ -15,7 +15,7 @@ RSpec.describe Comment, type: :model do
   describe '#decrement_comments_counter' do
     it 'decrements the likes_counter of the associated post' do
       user = User.create(name: 'John Doe', posts_counter: 0)
-      post = Post.create(author_id: user.id, title: 'Second Post', text: 'More thoughts', comments_counter: 2,
+      post = Post.create(author_id: user.id, title: 'Second Post', text: 'comment 2', comments_counter: 2,
                          likes_counter: 2)
 
       comment = Comment.create(author_id: user.id, post_id: post.id, text: 'im happy im sharing my comments!')
