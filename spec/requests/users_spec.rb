@@ -15,4 +15,11 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('List of Users')
     end
   end
+
+  describe 'GET /users/:id' do
+    it 'works!' do
+      get user_path(1)
+      expect(response).to have_http_status(200)
+    end
+  end
 end
