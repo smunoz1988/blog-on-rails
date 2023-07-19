@@ -15,4 +15,11 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Here will be deployed the list of posts')
     end
   end
+
+  describe 'GET /posts/:id' do
+    it 'works!' do
+      get '/users/1/posts/1'
+      expect(response).to have_http_status(200)
+    end
+  end
 end
