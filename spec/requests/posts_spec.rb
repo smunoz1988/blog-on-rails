@@ -10,5 +10,9 @@ RSpec.describe 'Posts', type: :request do
       get '/users/1/posts'
       expect(response).to render_template(:index)
     end
+    it 'the response body includes correct placeholder text' do
+      get '/users/1/posts'
+      expect(response.body).to include('Here will be deployed the list of posts')
+    end
   end
 end
