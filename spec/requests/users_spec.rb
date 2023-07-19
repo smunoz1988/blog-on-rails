@@ -22,4 +22,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(200)
     end
   end
+  it 'template works!' do
+    get user_path(1)
+    expect(response).to render_template(:show)
+  end
 end
