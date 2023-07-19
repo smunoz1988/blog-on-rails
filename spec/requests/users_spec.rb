@@ -26,4 +26,8 @@ RSpec.describe 'Users', type: :request do
     get user_path(1)
     expect(response).to render_template(:show)
   end
+  it 'the response body includes correct placeholder text' do
+    get user_path(1)
+    expect(response.body).to include('Here will go the data about the specific user')
+  end
 end
