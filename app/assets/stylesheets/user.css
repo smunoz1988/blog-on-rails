@@ -1,22 +1,12 @@
-body {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #title {
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .userCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .photo {
-    width: 5rem;
-    height: 5rem;
-    border: solid 0.1rem black;
-    margin-right: 1rem;
-  }
+.userCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  width: 5rem;
+  height: 5rem;
+  border: solid 0.1rem black;
+  margin-right: 1rem;
+}
