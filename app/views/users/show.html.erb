@@ -8,15 +8,18 @@
 
   <%= render 'shared/user_card', user: @user %>
 
-<div class="user-bio">
-    <h4 class="bio-p"> Bio</h4>
+<div class="userBio">
+    <h4> Bio</h4>
     <p><%= @user.bio %></p>
 </div>
 
 <%= render partial: 'shared/posts_container', locals: { posts: @user.posts } %>
 
+
 <div>
-    <button class="btn btn-primary">See all posts</button>
+  <div class="seeAllPostBtn">
+    <button >See all posts</button>
+  </div>    
 </div>
 
 </body>
