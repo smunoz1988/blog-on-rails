@@ -3,17 +3,6 @@
   </head>
   <body>
     <p>List of Users</p>
-    <div class="container-users">
-      <% @users.each do |user| %>
-        <div class="user-info">
-          <img src="<%= user.photo %>" alt="user picture" class="img-user">
-          <ul class="ul-users">
-            <li><%= link_to user.name, user_path(user), class: 'custom-link' %></li>
-            <li>Number of posts: <%= user.posts_counter %></li>
-          </ul>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'users_display' %>
   </body>
 </html>
-
