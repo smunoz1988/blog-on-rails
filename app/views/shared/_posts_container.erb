@@ -3,6 +3,7 @@
     <div class="post">
       <h4><%= link_to post.title, user_posts_path(user_id: post.author_id), class: 'custom-link-s' %></h4>
       <p><%= post.text %></p>
+       <p class="comments-likes">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     </div>
   <% end %>
 </div
