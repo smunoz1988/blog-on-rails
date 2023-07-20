@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#title {
+  justify-content: center;
+  text-align: center;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userImage {
+  width: 5rem;
+  height: 5rem;
+  border: solid 0.1rem black;
+  margin-right: 1rem;
+}
