@@ -8,6 +8,14 @@
 
   <%= render 'shared/user_card', user: @user %>
 
+  <div>
+  <div class="seeAllPostBtn">
+    <button>
+     <%= link_to "Add a post", new_form_post_path() %>
+    </button>
+  </div>    
+</div>
+
 <div class="userBio">
     <h4> Bio</h4>
     <p><%= @user.bio %></p>
