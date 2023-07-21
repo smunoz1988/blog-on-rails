@@ -1,2 +1,10 @@
-<h1>Here will go the detail about a specific post</h1>
-```
+<html>
+  <head>
+    <%= stylesheet_link_tag 'post' %>
+  </head>
+
+  <body>
+    <%= render 'post_card' %>
+    <%= render_comments_section(@post) %>
+  </body>
+</html>

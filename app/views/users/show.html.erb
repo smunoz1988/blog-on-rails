@@ -1,1 +1,31 @@
-<h1>Here will go the data about the specific user</h1>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'user' %>
+
+  </head>
+
+  <body>
+
+  <%= render 'shared/user_card', user: @user %>
+
+<div class="userBio">
+    <h4> Bio</h4>
+    <p><%= @user.bio %></p>
+</div>
+
+<%= render partial: 'shared/posts_container', locals: { posts: @user.posts } %>
+
+
+<div>
+  <div class="seeAllPostBtn">
+    <button>
+     <%= link_to 'See all Post', user_posts_path(@user) %>
+    </button>
+  </div>    
+</div>
+
+</body>
+</html>
+
+
+

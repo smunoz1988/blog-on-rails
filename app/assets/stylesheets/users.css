@@ -1,0 +1,49 @@
+.titleContainer {
+  display: flex;
+  text-align: center;
+}
+
+#title {
+  width: 100%;
+  margin: auto;
+}
+
+.userInfo {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userImage {
+  width: 5rem;
+  height: 5rem;
+  border: solid 0.1rem black;
+  margin-right: 1rem;
+}
+
+.userDetails {
+  border: solid 0.1rem black;
+  width: 25rem;
+  height: 5rem;
+}
+
+h2 {
+  margin: 0.5rem;
+}
+
+.userName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem;
+  margin-top: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.postsCounter {
+  font-size: 1rem;
+  margin: 0.5rem;
+  margin-top: 0;
+  text-align: end;
+}

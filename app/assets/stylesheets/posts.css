@@ -1,0 +1,45 @@
+.userPosts {
+  width: 31rem;
+  margin: auto;
+}
+
+.userPost {
+  border: solid 0.1rem black;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  padding-left: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.commentsLikes {
+  text-align: end;
+  font-size: 0.9rem;
+}
+
+.commentsContainer {
+  width: 100%;
+  border: solid 0.1rem black;
+  padding: 0;
+}
+
+h4 {
+  margin: 0.5rem;
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.seeAllPostBtn {
+  display: flex;
+  justify-content: center;
+}

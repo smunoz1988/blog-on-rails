@@ -1,0 +1,7 @@
+<div class="userPost">
+    <div>
+      <p><%= @post.title %> by: <%= @post.author.name %></p> 
+    </div>
+    <%= render_text_section(@post) %>
+    <p><%= @post.text %></p>
+</div>
