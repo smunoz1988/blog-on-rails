@@ -1,7 +1,7 @@
 module PostsHelper
   def render_comments_section(post)
-    content_tag(:ul, class: 'ul-comments-box') do
-      concat content_tag(:h4, 'Comments:', class: 'section-comments')
+    content_tag(:ul, class: 'commentsContainer') do
+      concat content_tag(:h4, 'Comments:', class: 'commentTitle')
 
       if post.comments.blank?
         concat content_tag(:li, 'no comments for the moment')
