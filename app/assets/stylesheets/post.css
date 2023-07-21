@@ -1,0 +1,9 @@
+.userPost {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  justify-content: end;
+}
