@@ -18,16 +18,16 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /users/:id' do
     it 'works!' do
-      get user_path(1)
+      get user_path(514)
       expect(response).to have_http_status(200)
     end
   end
   it 'template works!' do
-    get user_path(1)
+    get user_path(514)
     expect(response).to render_template(:show)
   end
   it 'the response body includes correct placeholder text' do
-    get user_path(1)
-    expect(response.body).to include('Here will go the data about the specific user')
+    get user_path(514)
+    expect(response.body).to include('John Doe')
   end
 end
