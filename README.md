@@ -110,6 +110,11 @@ rubocop
 - Twitter: [@twitterhandle](https://twitter.com/Santiag24209785)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/santiago-munoz-0b2b1a260)
 
+👤 **Jules Edozie**
+- GitHub: [@julzedz](https://github.com/julzedz)
+- LinkedIn: [Jules Edozie](https://www.linkedin.com/in/julesedozie/)
+- Twitter: [@twitterhandle](https://twitter.com/julzedz)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
