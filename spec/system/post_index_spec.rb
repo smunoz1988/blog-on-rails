@@ -67,7 +67,7 @@ RSpec.describe 'Post Index', type: :system do
 
     expect(page).to have_content(post.likes_counter)
   end
-  
+
   it 'redirects to post show page when clicking on post title' do
     post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id,
                        comments_counter: 0, likes_counter: 0)
