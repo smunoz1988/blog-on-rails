@@ -40,4 +40,13 @@ RSpec.describe 'Post Index', type: :system do
 
     expect(page).to have_content(post.text)
   end
+
+  it 'displays the first comments on a post' do
+    post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
+                       likes_counter: 0)
+    comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
+    visit user_posts_path(user_id: user.id)
+
+    expect(page).to have_content(comment.text)
+  end
 end
