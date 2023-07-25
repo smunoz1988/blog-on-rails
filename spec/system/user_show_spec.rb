@@ -44,5 +44,8 @@ RSpec.describe 'User Show Page', type: :system do
     it 'shows the number of posts the user has written' do
       expect(page).to have_content("Number of posts: #{user.posts_counter}")
     end
+    it 'shows the user bio' do
+      expect(page).to have_content(user.bio)
+    end
   end
 end
