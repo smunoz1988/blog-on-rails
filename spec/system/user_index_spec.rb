@@ -14,4 +14,11 @@ RSpec.describe 'User Index', type: :system do
     expect(page).to have_content(user1.name)
     expect(page).to have_content(user2.name)
   end
+
+  it 'displays the profile picture for each user' do
+    visit users_path
+
+    expect(page).to have_css("img[src='#{user1.photo}']")
+    expect(page).to have_css("img[src='#{user2.photo}']")
+  end
 end
