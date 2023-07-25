@@ -12,4 +12,14 @@ RSpec.describe 'User Show Page', type: :system do
       posts_counter: 3
     )
   end
+
+  let(:post) do
+    Post.create(
+      title: 'My First Post',
+      text: 'This is my first post',
+      author: user,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+  end
 end
