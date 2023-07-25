@@ -7,4 +7,11 @@ RSpec.describe 'User Index', type: :system do
 
   let!(:user1) { User.create(name: 'Mike', photo: 'https://example.com/mike.jpg', posts_counter: 1) }
   let!(:user2) { User.create(name: 'Tom', photo: 'https://example.com/tom.jpg', posts_counter: 3) }
+
+  it 'displays the username of all other users' do
+    visit users_path
+
+    expect(page).to have_content(user1.name)
+    expect(page).to have_content(user2.name)
+  end
 end
