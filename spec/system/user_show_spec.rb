@@ -53,5 +53,9 @@ RSpec.describe 'User Show Page', type: :system do
     it 'shows the user\'s last 3 posts' do
       expect(page).to have_content(post.text)
     end
+
+    it 'shows a button that allows me to view all of the user\'s posts when clicked' do
+      expect(page).to have_link('See all Posts', href: user_posts_path(user))
+    end
   end
 end
