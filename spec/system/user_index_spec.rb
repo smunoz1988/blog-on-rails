@@ -28,4 +28,11 @@ RSpec.describe 'User Index', type: :system do
     expect(page).to have_content("Number of posts: #{user1.posts_counter}")
     expect(page).to have_content("Number of posts: #{user2.posts_counter}")
   end
+
+  it 'redirects to a user\'s show page when clicking on a user' do
+    visit users_path
+
+    click_link user1.name
+    expect(page).to have_current_path(user_path(user1))
+  end
 end
