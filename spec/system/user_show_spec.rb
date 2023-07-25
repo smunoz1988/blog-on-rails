@@ -36,5 +36,9 @@ RSpec.describe 'User Show Page', type: :system do
       expect(profile_picture).to be_visible
       expect(profile_picture['src']).to eq user.photo
     end
+
+    it 'shows the user\'s name' do
+      expect(page).to have_content(user.name)
+    end
   end
 end
