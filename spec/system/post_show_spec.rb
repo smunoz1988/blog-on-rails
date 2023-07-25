@@ -1,0 +1,14 @@
+require 'rails_helper'
+
+RSpec.describe 'Post Show', type: :system do
+  before do
+    driven_by(:rack_test)
+  end
+
+  user = User.create(name: 'John Doe',
+                     photo: 'https://short.url/example', posts_counter: 5)
+  post = Post.create(title: 'My First Post', text: 'This is my first post', author_id: user.id, comments_counter: 0,
+                     likes_counter: 0)
+  comment = Comment.create(text: 'This is my first comment', author_id: user.id, post_id: post.id)
+
+end
