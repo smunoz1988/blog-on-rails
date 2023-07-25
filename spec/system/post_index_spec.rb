@@ -12,4 +12,10 @@ RSpec.describe 'Post Index', type: :system do
 
     expect(page).to have_css("img[src='#{user.photo}']")
   end
+
+  it "displays the user's name on user posts page" do
+    visit user_posts_path(user_id: user.id)
+
+    expect(page).to have_content(user.name)
+  end
 end
