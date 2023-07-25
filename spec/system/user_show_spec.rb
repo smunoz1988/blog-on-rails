@@ -22,4 +22,19 @@ RSpec.describe 'User Show Page', type: :system do
       likes_counter: 0
     )
   end
+
+  before do
+    user
+    post
+    visit user_path(user)
+  end
+
+  context 'User profile section' do
+    it 'shows the user profile picture' do
+      profile_picture = find('.photo')
+
+      expect(profile_picture).to be_visible
+      expect(profile_picture['src']).to eq user.photo
+    end
+  end
 end
