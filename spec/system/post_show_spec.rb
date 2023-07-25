@@ -18,4 +18,8 @@ RSpec.describe 'Post Show', type: :system do
     visit user_post_path(user_id: user.id, id: post.id)
     expect(page).to have_content(user.name)
   end
+  it 'displays how many comments the post has' do
+    visit user_post_path(user_id: user.id, id: post.id)
+    expect(page).to have_content(post.comments_counter)
+  end
 end
