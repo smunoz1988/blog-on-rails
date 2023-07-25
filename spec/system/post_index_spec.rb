@@ -18,4 +18,10 @@ RSpec.describe 'Post Index', type: :system do
 
     expect(page).to have_content(user.name)
   end
+
+  it "displays the user's post count on user posts page" do
+    visit user_posts_path(user_id: user.id)
+
+    expect(page).to have_content(user.posts_counter)
+  end
 end
