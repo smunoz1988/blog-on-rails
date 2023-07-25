@@ -48,4 +48,10 @@ RSpec.describe 'User Show Page', type: :system do
       expect(page).to have_content(user.bio)
     end
   end
+
+  context 'User posts section' do
+    it 'shows the user\'s last 3 posts' do
+      expect(page).to have_content(post.text)
+    end
+  end
 end
