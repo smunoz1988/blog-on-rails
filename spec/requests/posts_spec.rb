@@ -11,8 +11,20 @@ RSpec.describe 'Posts', type: :request do
     )
   end
 
+  let(:post) do
+    Post.create(
+      id: 1,
+      title: 'My First Post',
+      text: 'This is my first post',
+      author: user,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+  end
+
   before do
     user
+    post
   end
 
   describe 'GET /posts' do
@@ -32,16 +44,16 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET /posts/:id' do
     it 'works!' do
-      get '/users/1/posts/404'
+      get '/users/1/posts/1'
       expect(response).to have_http_status(200)
     end
     it 'template works!' do
-      get '/users/514/posts/404'
+      get '/users/1/posts/1'
       expect(response).to render_template(:show)
     end
     it 'the response body includes correct placeholder text' do
-      get '/users/514/posts/404'
-      expect(response.body).to include('This is the content of my first post')
+      get '/users/1/posts/1'
+      expect(response.body).to include('This is my first post')
     end
   end
 end
