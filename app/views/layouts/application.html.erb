@@ -12,19 +12,13 @@
 
   <body>
 
-      <!-- Flash messages for success notices -->
-    <% flash.each do |name, message| %>
-      <% if name == :notice %>
-        <p class="notice"><%= message %></p>
-      <% end %>
-    <% end %>
-
-    <!-- Flash messages for error alerts -->
-    <% flash.each do |name, message| %>
-      <% if name == :alert %>
-        <p class="alert"><%= message %></p>
-      <% end %>
-    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div id="sign_out">
+        <% if user_signed_in? %>
+            <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% end %>
+    </div>
     
     <%= yield %>
   </body>
