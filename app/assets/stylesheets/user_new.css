@@ -1,0 +1,31 @@
+.classContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.input {
+  width: 40rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 40rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.8);
+}
