@@ -11,6 +11,21 @@
   </head>
 
   <body>
+
+      <!-- Flash messages for success notices -->
+    <% flash.each do |name, message| %>
+      <% if name == :notice %>
+        <p class="notice"><%= message %></p>
+      <% end %>
+    <% end %>
+
+    <!-- Flash messages for error alerts -->
+    <% flash.each do |name, message| %>
+      <% if name == :alert %>
+        <p class="alert"><%= message %></p>
+      <% end %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
