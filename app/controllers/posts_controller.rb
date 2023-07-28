@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
   def index
     # @user = User.find(params[:user_id])
     @user = User.includes(posts: :comments).find(params[:user_id])
