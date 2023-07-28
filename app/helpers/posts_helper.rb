@@ -7,7 +7,7 @@ module PostsHelper
         concat content_tag(:li, 'no comments for the moment')
       else
         post.recent_comments.each do |comment|
-          concat content_tag(:li, "Username: #{comment.text.blank? ? 'no comments for the moment' : comment.text}") do
+          concat content_tag(:li, "#{comment.author.name}: #{comment.text.blank? ? 'no comments for the moment' : comment.text}") do
             # Add delete button here, conditionally if the user can delete the comment
             if can?(:destroy, comment)
               concat button_to("Delete", user_post_comment_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: "btn")
