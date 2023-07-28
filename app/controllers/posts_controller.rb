@@ -15,4 +15,12 @@ class PostsController < ApplicationController
     @post.increment!(:likes_counter)
     redirect_to user_post_path(@post.author_id, @post.id)
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @author = @post.author
+    @author.decrement!(:posts_counter)
+    @post.destroy!
+    redirect_to user_posts_path(id: @author.id), notice: 'Post was deleted successfully!'
+  end
 end
