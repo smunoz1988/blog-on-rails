@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   load_and_authorize_resource
-  
+
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
