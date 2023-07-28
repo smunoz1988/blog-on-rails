@@ -4,7 +4,7 @@
   <body><div class="wrapper">
 <div class="form-container">
     <h3 class="h3-form-post">Create a new Post</h3>
-  <%= form_with model: @post, url: form_posts_path, method: :post, data: { turbo_frame: "new" } do |f| %>    
+  <%= form_with model: @post, url: user_posts_path(), method: :post, data: { turbo_frame: "new" } do |f| %>    
     <div class="form-group">
       <%= f.label :title, "Insert a title" %>
       <%= f.text_field :title, class: 'form-control' %>

@@ -1,4 +1,7 @@
-class FormCommentController < ApplicationController
+class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
+
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
@@ -11,7 +14,6 @@ class FormCommentController < ApplicationController
   def create
     @current_user = current_user
     @post = Post.find(params[:comment][:post_id])
-
     @comment = Comment.new(comment_params)
     @comment.author_id = @current_user.id
     @comment.post_id = @post.id
@@ -25,6 +27,13 @@ class FormCommentController < ApplicationController
       flash.now[:alert] = 'Error: Comment could not be created.'
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy!
+    redirect_to user_post_path(id: @post.id), notice: 'Comment was successfully deleted!'
   end
 
   private

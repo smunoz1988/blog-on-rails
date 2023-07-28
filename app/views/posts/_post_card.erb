@@ -2,6 +2,12 @@
     <div>
       <p><%= @post.title %> by: <%= @post.author.name %></p> 
     </div>
-    <%= render_text_section(@post) %>
+      <div class="right">
+        <span>Comments: <%= @post.comments_counter %></span>
+        <span>Likes: <%= @post.likes_counter %></span>
+        <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
+          <%= form.submit "Like", class: "btn" %>
+        <% end %>
+      </div>
     <p><%= @post.text %></p>
 </div>

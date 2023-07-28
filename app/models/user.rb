@@ -9,8 +9,8 @@ class User < ApplicationRecord
   attribute :posts_counter, :integer, default: 0
   attribute :photo, :string, default: 'https://cdn-icons-png.flaticon.com/512/6075/6075889.png'
 
-  has_many :comments, foreign_key: 'author_id'
-  has_many :posts, foreign_key: 'author_id'
+  has_many :comments, foreign_key: 'author_id', dependent: :destroy
+  has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id'
 
   def recent_posts
