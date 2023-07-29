@@ -120,10 +120,7 @@ rubocop
 
 ## 🔭 Future Features <a name="future-features"></a>
 
--**U/I**
--**User interface**
--**User Sign up**
--**User Log in**
+-**Add style to labels**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
