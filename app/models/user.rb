@@ -19,6 +19,12 @@ class User < ApplicationRecord
     posts.order(created_at: :desc).limit(3)
   end
 
+  after_initialize :set_default_role, if: :new_record?
+
+  def set_default_role
+    self.role ||= 'user' # Replace 'user' with the default role you want to set
+  end
+
   private
 
   def generate_api_token
